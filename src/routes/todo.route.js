@@ -7,4 +7,6 @@ router.get('', todoController.getTodoList);
 
 router.post('', todoController.createTodo);
 
+router.put('/:_id', todoController.updateTodo);
+
 export default router;

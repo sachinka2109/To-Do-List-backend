@@ -26,3 +26,18 @@ export const createTodo = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const updateTodo = async (req, res, next) => {
+  try {
+    const data = await todoService.updateTodo(req.params._id, req.body);
+    console.log(req.body);
+    res.status(HttpStatus.ACCEPTED).json({
+      code: HttpStatus.ACCEPTED,
+      data: data,
+      message: 'Todo updated successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
