@@ -3,6 +3,7 @@ import * as todoController from '../controllers/todo.controller';
 
 const router = express.Router();
 
+router.get('', todoController.getTodoList);
 
 router.post('', todoController.createTodo);
 
