@@ -9,4 +9,6 @@ router.post('', todoController.createTodo);
 
 router.put('/:_id', todoController.updateTodo);
 
+router.delete('/:_id', todoController.deleteTodo);
+
 export default router;

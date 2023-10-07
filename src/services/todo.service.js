@@ -13,8 +13,6 @@ export const createTodo = async (body) => {
 
 
 export const updateTodo = async (_id, body) => {
-  console.log(_id);
-  console.log(body);
   const data = await Todo.findByIdAndUpdate(
     {
       _id,
@@ -25,4 +23,9 @@ export const updateTodo = async (_id, body) => {
     }
   );
   return data;
+};
+
+export const deleteTodo = async (_id) => {
+  await Todo.findByIdAndDelete(_id);
+  return '';
 };
