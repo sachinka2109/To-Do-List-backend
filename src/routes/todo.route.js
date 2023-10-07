@@ -11,4 +11,6 @@ router.put('/:_id', todoController.updateTodo);
 
 router.delete('/:_id', todoController.deleteTodo);
 
+router.get('/:_id', todoController.getSingleTodo);
+
 export default router;

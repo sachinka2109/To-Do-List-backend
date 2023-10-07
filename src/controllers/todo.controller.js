@@ -54,3 +54,16 @@ export const deleteTodo = async (req, res,next) => {
     next(error);
   }
 }
+
+export const getSingleTodo = async (req, res, next) => {
+  try {
+    const data = await todoService.getSingleTodo(req.params._id);
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'Todo fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};

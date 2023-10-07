@@ -29,3 +29,9 @@ export const deleteTodo = async (_id) => {
   await Todo.findByIdAndDelete(_id);
   return '';
 };
+
+
+export const getSingleTodo = async (_id) => {
+  const data = await Todo.findById(_id);
+  return data;
+};
