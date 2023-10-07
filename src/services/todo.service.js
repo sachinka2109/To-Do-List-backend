@@ -6,6 +6,11 @@ export const getTodoList = async () => {
   return data;
 };
 
+export const getSingleTodo = async (_id) => {
+  const data = await Todo.findById(_id);
+  return data;
+};
+
 export const createTodo = async (body) => {
   const data = await Todo.create(body);
   return data;
@@ -31,7 +36,4 @@ export const deleteTodo = async (_id) => {
 };
 
 
-export const getSingleTodo = async (_id) => {
-  const data = await Todo.findById(_id);
-  return data;
-};
+

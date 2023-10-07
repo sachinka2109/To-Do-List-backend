@@ -5,12 +5,13 @@ const router = express.Router();
 
 router.get('', todoController.getTodoList);
 
+router.get('/:_id', todoController.getSingleTodo);
+
 router.post('', todoController.createTodo);
 
 router.put('/:_id', todoController.updateTodo);
 
 router.delete('/:_id', todoController.deleteTodo);
 
-router.get('/:_id', todoController.getSingleTodo);
 
 export default router;
