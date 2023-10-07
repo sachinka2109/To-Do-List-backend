@@ -14,6 +14,19 @@ export const getTodoList = async (req, res, next) => {
   }
 };
 
+export const getSingleTodo = async (req, res, next) => {
+  try {
+    const data = await todoService.getSingleTodo(req.params._id);
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'Todo fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const createTodo = async (req, res, next) => {
   try {
     const data = await todoService.createTodo(req.body);
@@ -54,3 +67,4 @@ export const deleteTodo = async (req, res,next) => {
     next(error);
   }
 }
+
